@@ -12,9 +12,7 @@ import remove
 # works only if at least 2 files are used
 
 # folder with measured data
-datafolder = 'testdata/'
-measurement = ''
-foldername = datafolder + measurement
+foldername = 'testdata/'
 
 # folder with reduced background
 savename = 'results/'
