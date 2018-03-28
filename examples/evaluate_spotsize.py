@@ -11,7 +11,7 @@ import helper
 import read
 import functions
 
-# folder with measured data
+# folder with fitted data
 basefolder = 'data/spotsize/'
 foldername = basefolder + 'peaks/'
 
