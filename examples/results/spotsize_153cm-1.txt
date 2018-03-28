@@ -1,0 +1,23 @@
+[[Model]]
+    Model(spotsize)
+[[Fit Statistics]]
+    # fitting method   = leastsq
+    # function evals   = 38
+    # data points      = 14
+    # variables        = 4
+    chi-square         = 72900.88313
+    reduced chi-square = 7290.08831
+    Akaike info crit   = 127.80918
+    Bayesian info crit = 130.36541
+[[Variables]]
+    I_off:   159.146878 +/- 30.63093 (19.25%) (init= 150)
+    I0:      2191.01500 +/- 63.38143 (2.89%) (init= 2000)
+    x0:      11.5867370 +/- 0.250344 (2.16%) (init= 12)
+    w:       5.50310305 +/- 0.678077 (12.32%) (init= 5)
+[[Correlations]] (unreported correlations are <  0.100)
+    C(I_off, I0)                 = -0.527
+    C(I0, w)                     =  0.472
+    C(I0, x0)                    = -0.277
+    C(I_off, w)                  = -0.248
+    C(I_off, x0)                 = -0.248
+    C(x0, w)                     = -0.132
