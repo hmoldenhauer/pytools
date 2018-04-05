@@ -1,5 +1,6 @@
 import numpy as np
 from scipy.special import erf
+from scipy import integrate
 
 # define fano resonance
 def fano(x, y0, amplitude, center, width, q):
@@ -24,3 +25,15 @@ def gaussian_multiple(x, y0, *params):
 # define function to get the spotsize
 def spotsize(x, I_off, I0, x0, w):
     return I_off + I0 / 2 * (1 + erf(np.sqrt(2) * (x0 - x) / w))
+
+# =========================================================
+# Built in functions from fityk
+# http://fityk.nieto.pl/model.html#built-in-functions
+# =========================================================
+
+# define pseudo voigt function
+def fityk_pseudo_voigt(x, a0, a1, a2, a3):
+    x_mod = (x - a1) / a2
+    gauss = (1 - a3) * np.exp(-np.log(2) * x_mod**2)
+    lorentz = a3 / (1 + x_mod**2)
+    return a0 * (gauss + lorentz)

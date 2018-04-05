@@ -66,4 +66,19 @@ def get_fityk_voigt(filename):
         center = np.vstack((center, center_error))
         gwidth = np.vstack((gwidth, gwidth_error))
         shape = np.vstack((shape, shape_error))
-        return height, center, gwidth, shape
+
+        # sort the values by center
+        sorted_height = np.zeros_like(height)
+        sorted_center = np.zeros_like(center)
+        sorted_gwidth = np.zeros_like(gwidth)
+        sorted_shape = np.zeros_like(shape)
+
+        sorted_indices = np.argsort(center[0])
+        for i, value in enumerate(sorted_indices):
+            for j in range(0, 2):
+                sorted_height[j][i] = height[j][value]
+                sorted_center[j][i] = center[j][value]
+                sorted_gwidth[j][i] = gwidth[j][value]
+                sorted_shape[j][i] = shape[j][value]
+
+        return sorted_height, sorted_center, sorted_gwidth, sorted_shape
